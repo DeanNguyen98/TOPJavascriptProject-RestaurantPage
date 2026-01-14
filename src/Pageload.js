@@ -1,7 +1,7 @@
 import { loadHome} from "./home";
 import { loadMenu } from "./menu";
 import { loadContact } from "./contact";
-
+import { loadBooking } from "./booking";
 
 function createHeader () {
     const header = document.createElement("header");
@@ -27,14 +27,23 @@ menuButton.classList.add("button-nav");
 const contactButton = document.createElement("button");
 contactButton.textContent = "Contact";
 contactButton.classList.add("button-nav");
+const bookingButton = document.createElement("button");
+bookingButton.textContent = "Booking";
+bookingButton.classList.add("button-nav");
 
 navbar.appendChild(homeButton);
 navbar.appendChild(menuButton);
 navbar.appendChild(contactButton);
+navbar.appendChild(bookingButton);
 
 menuButton.addEventListener("click", () => {
     loadMenu();
     getActiveButton(menuButton);
+})
+
+bookingButton.addEventListener("click", () => {
+    loadBooking();
+    getActiveButton(bookingButton);
 })
 
 homeButton.addEventListener("click", () => {
