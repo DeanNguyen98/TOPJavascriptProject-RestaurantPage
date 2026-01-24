@@ -155,77 +155,150 @@ header h1 {
 /*Booking Page*/
 
 /* Booking Page */
+/* Container for the booking form */
 #main-booking {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    margin: 2rem auto;
     padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 15px;
-    animation: fadeIn 1s;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.8s ease-in-out;
 }
 
+/* Heading */
 #main-booking h1 {
-    margin-bottom: 2rem;
-    font-family: inherit;
-    color: var(--white);
+    margin-bottom: 1.5rem;
     font-size: 2rem;
+    text-align: center;
 }
 
+/* Form styling */
 #main-booking form {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
+/* Labels */
 #main-booking label {
-    color: var(--white);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     font-weight: 500;
 }
 
+/* Inputs and textarea */
 #main-booking input,
 #main-booking textarea {
-    padding: 0.5rem 1rem;
-    margin-bottom: 1.5rem;
-    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1.2rem;
+    border-radius: 8px;
     border: none;
-    font-family: inherit;
     font-size: 1rem;
+    font-family: inherit;
+    outline: none;
 }
 
+/* Focus effect */
 #main-booking input:focus,
 #main-booking textarea:focus {
-    outline: 2px solid var(--white);
-    background-color: white;
+    outline: 2px solid #fff;
+    background-color: #fff;
+    color: #000;
 }
 
+/* Submit button */
 #main-booking button[type="submit"] {
     padding: 10px 20px;
-    font-size: 1.2rem;
-    font-family: inherit;
-    border: 1px solid white;
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: var(--white);
+    font-size: 1.1rem;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Button hover */
 #main-booking button[type="submit"]:hover {
-    background-color: var(--background);
+    background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
+}
+
+/* Modal background */
+#confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+#confirm-modal .modal-content {
+    background-color: rgba(50, 50, 50, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+/* Modal heading */
+#confirm-modal h2 {
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+/* Modal summary text */
+#confirm-modal #summary-text {
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+/* Modal buttons */
+#confirm-modal button {
+    padding: 8px 16px;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Modal button hover */
+#confirm-modal button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
 @media (max-width: 500px) {
     #main-booking {
-        margin: 2rem;
         padding: 1rem;
+        margin: 1rem;
+    }
+
+    #main-booking h1 {
+        font-size: 1.5rem;
     }
 
     #main-booking input,
@@ -237,7 +310,12 @@ header h1 {
         font-size: 1rem;
         padding: 8px 16px;
     }
+
+    #confirm-modal .modal-content {
+        padding: 1rem;
+    }
 }
+
 
 /*Contact CSS */
 
